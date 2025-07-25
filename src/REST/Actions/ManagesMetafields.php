@@ -143,4 +143,19 @@ trait ManagesMetafields
     {
         return $this->getResources('metafields', $params, ['collections', $collectionId]);
     }
+
+    public function createLocationMetafield($locationId, array $data): MetafieldResource
+    {
+        return $this->createResource('metafields', $data, ['locations', $locationId]);
+    }
+
+    public function getLocationMetafieldsCount($locationId, array $params = []): int
+    {
+        return $this->getResourceCount('metafields', $params, ['locations', $locationId]);
+    }
+
+    public function getLocationMetafields($locationId, array $params = []): Collection
+    {
+        return $this->getResources('metafields', $params, ['locations', $locationId]);
+    }
 }
